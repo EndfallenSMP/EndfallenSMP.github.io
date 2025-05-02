@@ -48,10 +48,9 @@
       }
 
       header img {
-        max-width: 1000px;
-        width: 100%;
+        max-width: 100%;
         height: auto;
-        border-radius: 0px;
+        border-radius: 0;
       }
 
       header h1 {
@@ -76,7 +75,7 @@
         font-weight: 600;
         font-size: 1rem;
         border-left: 1px solid #333;
-        transition: background-color 0.3s ease, color 0.3s ease;
+        transition: background-color 0.3s ease, color 0.3s ease, font-size 0.5s ease, font-weight 0.5s ease;
       }
 
       nav a:first-child {
@@ -84,8 +83,11 @@
       }
 
       nav a:hover {
-        background-color: #4b0082;
+        background-color: #a25ed2;
         color: #fffbd1;
+        transition: font-size 0.5s ease, font-weight 0.5s ease;
+        font-size: 1.1rem;
+        text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0);
       }
 
       section {
@@ -97,6 +99,7 @@
       h2, h1 {
         color: #c09eff;
         margin-bottom: 20px;
+        text-align: center;
       }
 
       p {
@@ -129,6 +132,22 @@
         font-size: 0.9rem;
       }
 
+      #char-link {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        transition: padding 0.5s ease, font-size 0.5s ease, font-weight 0.5s ease, background-color 0.5s ease;
+        }
+
+        #char-link:hover {
+         padding-top: 5px;  
+         background-color: #5151515c;
+         padding-bottom: 5px;
+         transition: padding 0.5s ease, font-size 0.5s ease, font-weight 0.5s ease, color 0.5s ease;
+         text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0);
+         font-weight: bold;
+         font-size: 1.1rem;
+        }
+
       @media (max-width: 768px) {
         header h1 {
           font-size: 2rem;
@@ -155,11 +174,18 @@
       <a href="#https://endfallensmp.github.io">Home</a>
       <a href="news.html">News</a>
       <a href="events.html">Events</a>
-      <a href="#builds">Featured Builds</a>
-      <a href="#info">Helpful Info</a>
+      <a href="builds.html">Featured Builds</a>
+      <a href="info.html">Helpful Info</a>
       <a href="members.html">Members</a>
 
     </nav>
+
+    <nav style="text-align: center; background-color: #2b0d31; display: block; justify-content: center; flex-wrap: wrap; border-top: 2px solid #444; border-bottom: 2px solid #444;">
+      <a id="char-link" style="border-left: none;" href="#home">Home</a>
+      <a id="char-link" style="border-left: none;" href="">Latest News</a>
+      <a id="char-link" style="border-left: none;" href="">About EndfallenSMP</a>
+  </nav>
+
 
     <section id="home-img">
       <img
@@ -169,18 +195,45 @@
       />
     </section>
 
+    <section id="home">
+      <div style="background-color: #333; border-radius: 8px; padding: 20px; max-width: 700px; margin: 0 auto; outline: #000; outline-width: 6px; filter: drop-shadow(0 0 3px black);">
+        <h1 style="text-align: center;">Welcome to the Official EndfallenSMP Website!</h1>
+
+        <p>Here you’ll find useful information about our SMP, links to our addons, a list of all lore characters with brief descriptions, and much more!</p>
+        
+        <p>Why does this website exist? We've wanted to create it for a long time. It helps players learn about the lore, characters, and everything related to our server. On this site, you’ll find: Season 4 Lore Characters, a Staff Members list, featured builds, event updates, server news, and more. Enjoy your stay!</p>
+        
+        <h2 style="text-align: center;">What's New?</h2>
+        <ul>
+          <li>Website officially released – enjoy!</li>
+        </ul>
+              </div>
+    </section>
+
+    <section id="latestnews">
+      <div style="background-color: #333; border-radius: 8px; padding: 20px; max-width: 700px; margin: 0 auto; outline: #000; outline-width: 6px; filter: drop-shadow(0 0 3px black);">
+        <h1 style="text-align: center;">Latest News</h1>
+        <h2>Website Launch</h2>
+        <p>With the date of [date here] official EndfallenSMP Website got released. Developed by SamuraiBread, and hosted on Github: it allows us to update it very easily with latest news, new character additions and more.</p>
+      </div>
+    </section>
+
     <section id="aboutserver">
-      <h1>What is EndfallenSMP?</h1>
+      <div style="background-color: #333; border-radius: 8px; padding: 20px; max-width: 700px; margin: 0 auto; outline: #000; outline-width: 6px; filter: drop-shadow(0 0 3px black);">
+      <h1 style="text-align: center;">What is EndfallenSMP?</h1>
       <p>EndfallenSMP is a Minecraft: Bedrock Edition roleplay-focused server powered by custom-made addons.</p>
       <p>We value rich storytelling and character-driven narratives. It’s the perfect place to begin your roleplay adventure!</p>
       <p>Participate in events, connect with other players, and explore your character’s potential through immersive experiences.</p>
       <p>The current season, <strong>"Founder's Demise"</strong>, follows the story of the Archiver, transported to the Ruthia Region on another planet, slowly descending into madness.</p>
       <p>Meanwhile, The Founder, Ireatnifis, seeks entry into this world to continue his torment—as he always has.</p>
       <p>Interested in joining? Click below to receive an invite to our official Discord server!</p>
-
+      <iframe style="max-width: 1000px; width: 100%;" src="https://discord.com/widget?id=1294955642544586838&theme=dark" width="1000" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
       <a class="button" href="https://discord.gg/3XdUhe9Rn3">Join Discord</a>
+      </div>
     </section>
 
-    <footer>&copy; EndfallenSMP 2025. All rights reserved.</footer>
+    <footer>
+      <p>&copy; 2025 EndfallenSMP. All Rights Reserved.</p>
+    </footer>
   </body>
 </html>

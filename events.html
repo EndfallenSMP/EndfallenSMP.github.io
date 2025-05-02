@@ -48,10 +48,9 @@
       }
 
       header img {
-        max-width: 1000px;
-        width: 100%;
+        max-width: 100%;
         height: auto;
-        border-radius: 0px;
+        border-radius: 0;
       }
 
       header h1 {
@@ -76,7 +75,7 @@
         font-weight: 600;
         font-size: 1rem;
         border-left: 1px solid #333;
-        transition: background-color 0.3s ease, color 0.3s ease;
+        transition: background-color 0.3s ease, color 0.3s ease, font-size 0.5s ease, font-weight 0.5s ease;
       }
 
       nav a:first-child {
@@ -84,8 +83,11 @@
       }
 
       nav a:hover {
-        background-color: #4b0082;
+        background-color: #a25ed2;
         color: #fffbd1;
+        transition: font-size 0.5s ease, font-weight 0.5s ease;
+        font-size: 1.1rem;
+        text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0);
       }
 
       section {
@@ -97,6 +99,7 @@
       h2, h1 {
         color: #c09eff;
         margin-bottom: 20px;
+        text-align: center;
       }
 
       p {
@@ -129,6 +132,22 @@
         font-size: 0.9rem;
       }
 
+      #char-link {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        transition: padding 0.5s ease, font-size 0.5s ease, font-weight 0.5s ease, background-color 0.5s ease;
+        }
+
+        #char-link:hover {
+         padding-top: 5px;  
+         background-color: #5151515c;
+         padding-bottom: 5px;
+         transition: padding 0.5s ease, font-size 0.5s ease, font-weight 0.5s ease, color 0.5s ease;
+         text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0);
+         font-weight: bold;
+         font-size: 1.1rem;
+        }
+
       @media (max-width: 768px) {
         header h1 {
           font-size: 2rem;
@@ -152,12 +171,19 @@
     </header>
 
     <nav>
-      <a href="https://endfallensmp.github.io">Home</a>
+      <a href="#https://endfallensmp.github.io">Home</a>
       <a href="news.html">News</a>
       <a href="events.html">Events</a>
-      <a href="builds.html">Builds</a>
-      <a href="info.html">Info</a>
+      <a href="builds.html">Featured Builds</a>
+      <a href="info.html">Helpful Info</a>
       <a href="members.html">Members</a>
+
     </nav>
+
+    <nav style="text-align: center; background-color: #2b0d31; display: block; justify-content: center; flex-wrap: wrap; border-top: 2px solid #444; border-bottom: 2px solid #444;">
+      <a id="char-link" style="border-left: none;" href="#home">Home</a>
+      <a id="char-link" style="border-left: none;" href="">Latest News</a>
+      <a id="char-link" style="border-left: none;" href="">About EndfallenSMP</a>
+  </nav>
 </body>
 </html>
