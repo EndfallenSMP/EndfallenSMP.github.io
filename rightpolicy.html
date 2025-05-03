@@ -73,6 +73,54 @@
         color: #000;
       }
 
+            nav {
+        background-color: #1c1c1c;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        border-top: 2px solid #444;
+        border-bottom: 2px solid #444;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 15px 25px;
+        font-weight: 600;
+        font-size: 1rem;
+        border-left: 1px solid #333;
+        transition: background-color 0.3s ease, color 0.3s ease, font-size 0.5s ease, font-weight 0.5s ease;
+      }
+
+      nav a:first-child {
+        border-left: none;
+      }
+
+      nav a:hover {
+        background-color: #a25ed2;
+        color: #fffbd1;
+        transition: font-size 0.5s ease, font-weight 0.5s ease;
+        font-size: 1.1rem;
+        text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0);
+      }
+
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2rem;
+        }
+
+        nav a {
+          flex: 1 1 100%;
+          text-align: center;
+        }
+
+        .button {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+
     </style>
   </head>
   <body>
@@ -80,6 +128,16 @@
       <img src="images/endfallensmp.png" alt="EndfallenSMP Logo" />
       <h1 style="text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;">EndfallenSMP Internal Rights Policy</h1>
     </header>
+
+    <nav>
+      <a href="https://endfallensmp.github.io">Home</a>
+      <a href="news.html">News</a>
+      <a href="events.html">Events</a>
+      <a href="builds.html">Featured Builds</a>
+      <a href="info.html">Helpful Info</a>
+      <a href="members.html">Members</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </nav>
 
     <section>
       <article>
@@ -108,6 +166,8 @@
         <p>EndfallenSMP respects and protects the creativity of its members. This document aims to ensure fairness, recognition, and collaboration across all content and development efforts.</p>
       </article>
       <a style="margin: 20px;" class="button" href="members.html">Go back</a>
+      <a style="margin: 0 auto;" class="button" href="privacy-policy.html">See also Privacy Policy</a>
+
     </section>
 
     <footer>
