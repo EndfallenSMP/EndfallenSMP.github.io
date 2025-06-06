@@ -239,74 +239,7 @@
   </nav>
 
   <section id="Incoming">
-    <h1>Incoming Events</h1>
-    <div class="body-box">
-      <h1>Masquerade</h1>
-      <p id="event-time"></p>
-      <p>
-        <strong>🎭 The Masquerade 🎭</strong><br><br>
-      
-        <em>An Enchanted Night of Mystery and Celebration</em><br><br>
-      
-        Welcome to <em>The Masquerade</em>, a grand and mysterious celebration hosted by the beloved King Danvar of Poburg!<br><br>
-      
-        Put on your finest mask and step into a night of elegance, secrets, and surprises. From royal dances to hidden whispers in candlelit halls, this is no ordinary gathering. Who will you be when no one knows your face?<br><br>
-      
-        Get ready for thrilling interactions, secretive games, and the unexpected twists that only a true masquerade can bring.<br><br>
-      
-        <strong>You’re invited... but can you truly trust anyone behind the mask?</strong><br><br>
-      
-        Hosted on the Realm<br><br>
-      
-        <span id="event-time"></span><br>
-        <span id="countdown" style="font-weight: bold; font-size: 1.1em;"></span>
-      </p>
-      
-      <script>
-        function getLocalMidnightTomorrow() {
-          const now = new Date();
-          return new Date(
-            now.getFullYear(),
-            now.getMonth(),
-            now.getDate() + 1,
-            0, 0, 0
-          );
-        }
-      
-        const eventDate = getLocalMidnightTomorrow();
-      
-        const options = {
-          weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-          hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short'
-        };
-        document.getElementById("event-time").textContent =
-          `🕛 The event starts at: ${eventDate.toLocaleString(undefined, options)}`;
-      
-        function updateCountdown() {
-          const now = new Date();
-          const diff = eventDate - now;
-      
-          if (diff <= 0) {
-            document.getElementById("countdown").textContent = "🎉 The event has just started!";
-            clearInterval(timer);
-            return;
-          }
-      
-          const totalSeconds = Math.floor(diff / 1000);
-          const days = Math.floor(totalSeconds / (3600 * 24));
-          const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600);
-          const minutes = Math.floor((totalSeconds % 3600) / 60);
-          const seconds = totalSeconds % 60;
-      
-          document.getElementById("countdown").textContent =
-            `⏳ Time left: ${days}d ${hours}h ${minutes}m ${seconds}s`;
-        }
-      
-        const timer = setInterval(updateCountdown, 1000);
-        updateCountdown();
-      </script>
-      
-    </div>
+    <h1>Oopsies... This page is undergoing maintance, please check sometime later :)</h1>
   </section>
 </body>
 </html>
