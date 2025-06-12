@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EndfallenSMP</title>
+
+    <!-- Open Graph Embed -->
+    <meta property="og:title" content="EndfallenSMP" />
+    <meta property="og:description" content="Official website for EndfallenSMP." />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Embed -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="EndfallenSMP" />
+    <meta name="twitter:description" content="Official EndfallenSMP Website" />
+    <meta name="twitter:image" content="images/efsmp-transparent.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/efsmp-transparent.png" type="image/png" />
+
+    <!-- Modern CSS -->
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #1f1f1f, #2d2d2d);
+        color: #f5f5f5;
+        line-height: 1.6;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      header {
+        background: linear-gradient(135deg, #161616, #c4a2a2);
+        padding: 30px 15px;
+        text-align: center;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      header img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 0;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-top: 15px;
+        color: #d6b4ff;
+      }
+
+      nav {
+        background-color: #1c1c1c;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        border-top: 2px solid #444;
+        border-bottom: 2px solid #444;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 15px 25px;
+        font-weight: 600;
+        font-size: 1rem;
+        border-left: 1px solid #333;
+        transition: background-color 0.3s ease, color 0.3s ease, font-size 0.5s ease, font-weight 0.5s ease;
+      }
+
+      nav a:first-child {
+        border-left: none;
+      }
+
+      nav a:hover {
+        background-color: #a25ed2;
+        color: #fffbd1;
+        transition: font-size 0.5s ease, font-weight 0.5s ease;
+        font-size: 1.1rem;
+        text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0);
+      }
+
+      section {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      h2, h1 {
+        color: #c09eff;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      p {
+        margin-bottom: 1rem;
+        font-size: 1.05rem;
+      }
+
+      .button {
+        display: block;
+        background: #7a00cc;
+        color: #fdfdfd;
+        padding: 12px 28px;
+        text-decoration: none;
+        font-size: 1rem;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        text-align: center;
+      }
+
+      .button:hover {
+        background: #a27aff;
+        color: #000;
+      }
+
+      footer {
+        background-color: #0f0f0f;
+        color: #999;
+        text-align: center;
+        padding: 25px 10px;
+        margin-top: 40px;
+        font-size: 0.9rem;
+      }
+
+      #char-link {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        transition: padding 0.5s ease, font-size 0.5s ease, font-weight 0.5s ease, background-color 0.5s ease;
+        }
+
+        #char-link:hover {
+         padding-top: 5px;  
+         background-color: #5151515c;
+         padding-bottom: 5px;
+         transition: padding 0.5s ease, font-size 0.5s ease, font-weight 0.5s ease, color 0.5s ease;
+         text-shadow: -1px -1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px 1px 0 rgb(0, 0, 0);
+         font-weight: bold;
+         font-size: 1.1rem;
+        }
+
+        .body-box {
+          background-color: #333;
+          border-radius: 8px;
+          transition: padding 0.5s ease, font-size 0.5s ease, font-weight 0.5s ease, background-color 1s ease, max-width 1s ease;
+          padding: 20px;
+          max-width: 700px;
+          margin: 0 auto;
+          outline: #000;
+          outline-width: 6px;
+          filter: drop-shadow(0 0 3px black);
+          
+        }
+        .body-box:hover {
+          transition: padding 0.5s ease, font-size 0.5s ease, font-weight 0.5s ease, background-color 1s ease, max-width 1s ease;
+          background-color: #444;
+          padding: 30px;
+          max-width: 800px;
+        }
+        .characterpic {
+          max-width:400px;
+          width: 100%;
+          border-radius: 8px;
+          box-shadow: 0 0 0 3px rgb(255, 100, 100);
+          filter: drop-shadow(0 0 3px black);
+          margin: 0 auto;
+          display: block;
+          transition: max-width 1s ease;
+        }
+
+          .seasonpic {
+          max-width:400px;
+          width: 100%;
+          border-radius: 8px;
+          filter: drop-shadow(0 0 3px black);
+          margin: 0 auto;
+          display: block;
+          transition: max-width 1s ease;
+        }
+
+        .seasonpic:hover {
+          max-width: 500px;
+        }
+
+        .characterpic:hover {
+          max-width: 600px;
+          transition: max-width 1s ease;
+        }
+
+        .pfp {
+          transition: max-width 0.5s ease, border-radius 0.5s ease;
+          max-width: 50px;
+          height: auto;
+          border-radius: 30px;
+          box-shadow: 0 0 0 1px rgb(184, 56, 56);
+          filter: drop-shadow(0 0 3px black);
+        }
+
+        .pfp:hover {
+          transition: max-width 0.5s ease, border-radius 0.5s ease;
+          max-width: 70px;
+          border-radius: 8px;
+        }
+
+      @media (max-width: 768px) {
+        header h1 {
+          font-size: 2rem;
+        }
+
+        nav a {
+          flex: 1 1 100%;
+          text-align: center;
+        }
+
+        .button {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+    <meta name="google-site-verification" content="UNJBc2-4umEdROT98HuAU8BNavkqnlpyv0f2Xv4BERY" />
+  </head>
+  <body>
+    <header>
+      <img src="images/PE.png" alt="EndfallenSMP Logo" style="max-width: 50%;">
+    </header>
+
+    <nav>
+      <a href="https://endfallensmp.github.io">Home</a>
+    </nav>
+    <section> 
+      <div>
+        <h1>Season 5</h1>
+        <img href="currentseason.html" src="images/PE.png" alt="EndfallenSMP Logo" style="max-width: 50%;">
+      </div>
+      <br>
+      <div>
+        <h1>After Dark</h1>
+        <a href="afterdark.html"><img src="images/afterdark.png" alt="EndfallenSMP Logo" class="seasonpic"></a>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2024-2025 EndfallenSMP. All Rights Reserved.</p>
+      <p>&copy; All rights towards lore listed on the website are intelectual property of EndfallenSMP and it's members. Content can be shared across social media only upon giving link to our website.</p>
+    </footer>
+  </body>
+</html>
