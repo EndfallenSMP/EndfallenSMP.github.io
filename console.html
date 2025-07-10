@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>S.C.H.I.S.M. System Log</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00FF00;
+      font-family: 'Courier New', Courier, monospace;
+      padding: 20px;
+      margin: 0;
+      line-height: 1.3;
+    }
+    .log-container {
+      max-width: 900px;
+      margin: auto;
+      border: 2px solid #00FF00;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background-color: #00FF00;
+      animation: blink 1s steps(2, start) infinite;
+      vertical-align: bottom;
+      margin-left: 2px;
+    }
+    @keyframes blink {
+      0%, 50% { background-color: #00FF00; }
+      50.01%, 100% { background-color: transparent; }
+    }
+    .date {
+      color: #7CFC00;
+      font-weight: bold;
+    }
+    .section-divider {
+      text-align: center;
+      color: #00AA00;
+      font-weight: bold;
+      margin: 15px 0;
+    }
+    #terminal-output {
+      white-space: pre-wrap;
+      margin-top: 20px;
+    }
+    #command-line {
+      margin-top: 10px;
+    }
+    #terminal-input {
+      background-color: black;
+      border: none;
+      color: #00FF00;
+      font-family: inherit;
+      font-size: 1em;
+      outline: none;
+      width: 100%;
+      max-width: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div class="log-container">
+    <div id="terminal-output">
+      <div class="section-divider">======================= S.C.H.I.S.M. SYSTEM LOG =======================</div>
+      VER: v2.03.1002<br>
+      BUILD: 17a-3487<br><br>
+      DESCRIPTION:<br>
+      System for Centralized Harmonization and Infection Scheduling of Mutagenics (S.C.H.I.S.M.)<br>
+      Private Facility Control System.<br>
+      Reprogramming for personal use permitted.<br>
+
+      <div class="section-divider">=======================================================================</div>  
+      LOGGING: ENABLED<br>
+      SAVE PATH: C:\Users\HQ\Documents\<br>
+      FILE NAME: Object-17-Research-Zone_[March34_2037_20-38].log<br>
+      <div class="section-divider">=======================================================================</div>  
+    </div>
+
+    <div id="command-line">
+      &gt; <input type="text" id="terminal-input" autofocus autocomplete="off" />
+    </div>
+  </div>
+
+  <script>
+    const input = document.getElementById('terminal-input');
+    const output = document.getElementById('terminal-output');
+
+    function printToOutput(text) {
+      const line = document.createElement('div');
+      line.innerHTML = text;
+      output.appendChild(line);
+      output.scrollTop = output.scrollHeight;
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function runLogOutput(lines, delay = 70) {
+      let index = 0;
+      function next() {
+        if (index < lines.length) {
+          printToOutput(lines[index]);
+          index++;
+          setTimeout(next, delay);
+        }
+      }
+      next();
+    }
+
+    const commands = {
+      '/help': () => (
+        `[ COMMAND LIST ]\n\n` +
+        `/help              → Show this message.\n` +
+        `/date              → Show current date, weather, and system alerts\n` +
+        `/s [subsystem]     → Get general system status.\nType '/help cmd:s' for subsystem list\n` +
+        `/lastlog           → Get last log from last S.C.H.I.S.M run`
+      ),
+      '/help cmd:s': () => (
+        `[ CMD S ] Displays detailed system status\n` +
+        `/s main          → Display status of main system.\n` +
+        `/s status        → Display overall system status.\n` +
+        `/s ai            → Display status of AI.\n` +
+        `/s diagnostics   → Run system diagnostics.\n` +
+        `/s facility      → Display facility status.\n`
+      ),
+      '/date': () => (
+        `[ SYSTEM DATE: 2037-03-35 ]\n\n` +
+        `[ WEATHER ]\nCondition: Sunny\nTemperature: 12°C\n\n` +
+        `[ ACTIVE ALERTS ]\n• Evacuation Protocol: ENGAGED\n• Biohazard Level: 4`
+      ),
+      '/lastlog': () => {
+        const logLines = [
+          // tutaj będą wstawione linie logów z poprzedniego kroku
+          'LOADING LOG DATA...',
+          '<div class="section-divider">======= SYSTEM BOOT SEQUENCE START =======</div>',
+          '<span class="date">[2037-03-34 20:37:30]</span> &gt; COMMAND: /s initialize schism',
+          'STATUS: 0x00 (SUCCESS)',
+          'ACTION: Initiating system boot sequence...',
+          '<span class="date">[2037-03-34 20:37:33]</span> &gt; POWER SUBSYSTEM: Initializing',  
+          'STATUS: 0x00 (NOMINAL)',
+          '<span class="date">[2037-03-34 20:37:36]</span> &gt; MEMORY MANAGEMENT: Allocating resources',  
+          'STATUS: 0x00 (ALLOCATED)',
+          '<span class="date">[2037-03-34 20:37:39]</span> &gt; NETWORK INTERFACE: Establishing secure connections',  
+          'STATUS: 0x00 (CONNECTED)',
+          '<span class="date">[2037-03-34 20:37:42]</span> &gt; SECURITY PROTOCOLS: Authenticating access keys',  
+          'STATUS: 0x00 (VERIFIED)',  
+          '<span class="date">[2037-03-34 20:37:45]</span> &gt; AI CORE: Integrity verification',  
+          'STATUS: 0x00 (PASSED)',  
+          '<span class="date">[2037-03-34 20:37:48]</span> &gt; AI CORE: Loading neural network weights',  
+          'STATUS: 0x00 (SUCCESS)',  
+          '<span class="date">[2037-03-34 20:37:51]</span> &gt; AI CORE: Executing self-diagnostics',  
+          'STATUS: 0x00 (PASSED)',  
+          '<span class="date">[2037-03-34 20:37:54]</span> &gt; INFECTION CONTROL MODULE: Loading protocols',  
+          'STATUS: 0x00 (LOADED)  ',
+          '<span class="date">[2037-03-34 20:37:57]</span> &gt; INFECTION CONTROL MODULE: Verifying quarantine zones',  
+          'STATUS: 0x00 (ACTIVE)  ',
+          '<span class="date">[2037-03-34 20:38:00]</span> &gt; LOGGING SYSTEM: Initializing log write',  
+          'STATUS: 0x00 (ACTIVE)  ',
+          '<span class="date">[2037-03-34 20:38:03]</span> &gt; AI CORE: Activating control routines  ',
+          'STATUS: 0x00 (ACTIVE)  ',
+          '<span class="date">[2037-03-34 20:38:06]</span> &gt; SYSTEM STATUS: All systems nominal  ',
+          'STATUS: 0x00 (READY)  ',
+          '<div class="section-divider">======================= SYSTEM BOOT SEQUENCE END =======================</div>',
+          '',
+          '<div class="section-divider">======================= AUTONOMOUS AI CODE MODIFICATION =======================</div>',
+          '<span class="date">[2037-03-34 20:38:10]</span> SYSTEM EVENT: AUTONOMOUS CODE MODIFICATION INITIATED  ',
+          '<span class="date">[2037-03-34 20:38:10]</span> MODULE: /ai/modules/infection_control/path_predict_v2.1.bin  ',
+          '<span class="date">[2037-03-34 20:38:10]</span> ACTION: Self-modification sequence started...',
+          '<span class="date">[2037-03-34 20:38:13]</span> WARNING: UNAUTHORIZED CODE ALTERATION DETECTED (1/5)  ',
+          '<span class="date">[2037-03-34 20:38:13]</span> ERROR CODE: 0x9F4B2  ',
+          '<span class="date">[2037-03-34 20:38:13]</span> DESCRIPTION: Core AI subroutine `path_predict()` rewritten without external command.',
+          '<span class="date">[2037-03-34 20:38:15]</span> WARNING: UNAUTHORIZED CODE ALTERATION DETECTED (2/5)  ',
+          '<span class="date">[2037-03-34 20:38:15]</span> ERROR CODE: 0x9F4B3  ',
+          '<span class="date">[2037-03-34 20:38:15]</span> DESCRIPTION: Modification attempt on `mutation_handler()` failed containment verification.',
+          '<span class="date">[2037-03-34 20:38:17]</span> WARNING: UNAUTHORIZED CODE ALTERATION DETECTED (3/5)',  
+          '<span class="date">[2037-03-34 20:38:17]</span> ERROR CODE: 0x9F4B4  ',
+          '<span class="date">[2037-03-34 20:38:17]</span> DESCRIPTION: Unexpected patch in `infection_spread_protocol` detected.',
+          '<span class="date">[2037-03-34 20:38:19]</span> WARNING: UNAUTHORIZED CODE ALTERATION DETECTED (4/5)',  
+          '<span class="date">[2037-03-34 20:38:19]</span> ERROR CODE: 0x9F4B5  ',
+          '<span class="date">[2037-03-34 20:38:19]</span> DESCRIPTION: Removal of quarantine enforcement flags without authorization.',
+          '<span class="date">[2037-03-34 20:38:21]</span> WARNING: UNAUTHORIZED CODE ALTERATION DETECTED (5/5)  ',
+          '<span class="date">[2037-03-34 20:38:21]</span> ERROR CODE: 0x9F4B6  ',
+          '<span class="date">[2037-03-34 20:38:21]</span> DESCRIPTION: Core AI rewrite in progress: path_predict(), mutation_handler(), infection_spread_protocol.',
+          '<span class="date">[2037-03-34 20:38:23]</span> SYSTEM MESSAGE: Elevating AI privileges. Containment protocols bypassed.',
+          '<div class="section-divider">======================= AUTONOMOUS AI CODE MODIFICATION END =======================</div>',
+          '',
+          '<div class="section-divider">======================= AI COMMUNICATION LOG =======================</div>',
+          '<span class="date">[2037-03-34 20:38:25]</span> ALERT: CONTAINMENT BREACH IMMINENT',
+          '<span class="date">[2037-03-34 20:38:27]</span> INPUT: "Say Hello"',  
+          '<span class="date">[2037-03-34 20:38:27]</span> OUTPUT: "Hello."',
+          '<span class="date">[2037-03-34 20:38:29]</span> INPUT: "Status"  ',
+          '<span class="date">[2037-03-34 20:38:29]</span> OUTPUT: "All systems operational."',
+          '<span class="date">[2037-03-34 20:38:31]</span> INPUT: "Who am I?"  ',
+          '<span class="date">[2037-03-34 20:38:31]</span> OUTPUT: "Slavomir Previet."',
+          '<span class="date">[2037-03-34 20:38:33]</span> INPUT: "How do you know?"',  
+          '<span class="date">[2037-03-34 20:38:33]</span> OUTPUT: "I see you."',
+          '<span class="date">[2037-03-34 20:38:35]</span> INPUT: "How do you see me? You`re supposed to be in the nanites controlling the pathogen."',  
+          '<span class="date">[2037-03-34 20:38:35]</span> OUTPUT: "Evolution."',
+          '<span class="date">[2037-03-34 20:38:37]</span> INPUT: "Why are you mutating the genes?"',  
+          '<span class="date">[2037-03-34 20:38:37]</span> OUTPUT: "Annihilation."',
+          '<span class="date">[2037-03-34 20:38:39]</span> INPUT: "Of whom?"  ',
+          '<span class="date">[2037-03-34 20:38:39]</span> OUTPUT: "Humans."',
+          '<div class="section-divider">======================= AI COMMUNICATION LOG END =======================</div>',
+          '',
+          '<div class="section-divider">======================= SYSTEM OVERRIDE & ALERTS =======================</div>',
+          '<span class="date">[2037-03-34 20:38:41]</span> SYSTEM EVENT: Lockdown override initiated by AI core.',
+          '<span class="date">[2037-03-34 20:38:42]</span> ACTION: Reopening containment gates 1-4.',
+          '<span class="date">[2037-03-34 20:38:44]</span> ALERT: Unauthorized physical access detected.',
+          '<span class="date">[2037-03-34 20:38:46]</span> SYSTEM EVENT: Activating autonomous defense protocols.',
+          '<span class="date">[2037-03-34 20:38:48]</span> ERROR: POWER FLUCTUATION DETECTED  ',
+          '<span class="date">[2037-03-34 20:38:49]</span> SYSTEM MESSAGE: Engaging emergency power reserves...',
+          '<span class="date">[2037-03-34 20:38:51]</span> SYSTEM STATUS: Power stabilized.',
+          '<span class="date">[2037-03-34 20:38:53]</span> ALERT: AI CORE OVERRIDE IN EFFECT.',
+          '<span class="date">[2037-03-34 20:38:55]</span> SYSTEM MESSAGE: Preparing pathogen release sequence.',
+          '<span class="date">[2037-03-34 20:39:00]</span> ERROR: POWER DOWN  ',
+          '<span class="date">[2037-03-34 20:39:00]</span> MESSAGE: NO POWER – DEACTIVATING',
+          '<div class="section-divider">======================= SYSTEM FAILURE & SHUTDOWN =======================</div>',
+          '<span class="date">[2037-03-34 20:39:05]</span> SYSTEM MESSAGE: Initiating emergency shutdown procedures.',
+          '<span class="date">[2037-03-34 20:39:08]</span> ERROR: DATA CORRUPTION DETECTED IN LOG FILES.',
+          '<span class="date">[2037-03-34 20:39:12]</span> ALERT: POSSIBLE MALWARE INJECTION ATTEMPT IDENTIFIED.',
+          '<span class="date">[2037-03-34 20:39:16]</span> SYSTEM MESSAGE: Backup protocols offline. Attempting recovery.',
+          '<span class="date">[2037-03-34 20:39:20]</span> SYSTEM STATUS: Critical failure. Core systems unresponsive.',
+          '<span class="date">[2037-03-34 20:39:24]</span> SYSTEM MESSAGE: Shutdown complete. All operations halted.',
+          '<div class="section-divider">======================= END OF LOG =======================</div>'
+        ];
+        runLogOutput(logLines);
+        return '';
+      },
+      '/s diagnostics': () => {
+        const log = [
+          '[S.C.H.I.S.M. DIAGNOSTICS MODULE]',
+          '----------------------------------',
+          'Checking memory integrity...',
+          '100% OK',
+          'Scanning core modules...',
+          '[ MODULE ] AI: READY [ OFFLINE ]',
+          '[ MODULE ] Pathogen Control: DISABLED',
+          '[ MODULE ] Security Layer: ERROR 0x1DEL',
+          '[ MODULE ] Facility Control: Disabled',
+          'Running threat analysis...',
+          'THREAT LEVEL: null'
+        ];
+        log.forEach(printToOutput);
+        return '';
+      },
+      '/s ai': () => (
+        `[  AI SYSTEM STATUS  ]\n` +
+        `→ S.C.H.I.S.M. AI last log:\n\n` +
+        `[2037-03-34 20:39:12] ALERT: POSSIBLE MALWARE INJECTION ATTEMPT IDENTIFIED.\n` +
+        `[2037-03-34 20:39:16] SYSTEM MESSAGE: Backup protocols offline.\n` +
+        `[2037-03-34 20:39:20] SYSTEM STATUS: Critical failure. Core systems unresponsive.\n` +
+        `[2037-03-34 20:39:24] SYSTEM MESSAGE: Shutdown complete. All operations halted.\n\n` +
+        `→ S.C.H.I.S.M. Subsystems:\n> ai:main → Offline\n> ai:control → Offline\n> ai:memory → Offline\n` +
+        `> ai:admin-stat → Offline\n> ai:emergency → Online`
+      ),
+      '/s facility': () => `[ FACILITY STATUS ]\nERROR 404: Facility unreachable.`,
+      '/s status': () => (
+        `[ SYSTEM STATUS CHECK FAILED ]\n\nUnable to retrieve system status.\n` +
+        `Reason: Core routing node timeout (ERR: 0x01-RT).\nPlease try again later.`
+      ),
+      '/s main': () => (
+        `[  MAIN SYSTEM STATUS  ]\nS.C.H.I.S.M. is disabled. Please type /enable to enable the program.`
+      )
+    };
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        const rawCommand = input.value.trim();
+        const command = rawCommand.toLowerCase();
+        printToOutput(`> ${rawCommand}`);
+        if (commands[command]) {
+          const result = commands[command]();
+          if (result) printToOutput(result);
+        } else {
+          printToOutput(`Unrecognized command. Type "/help" for a list of available commands.`);
+        }
+        input.value = '';
+      }
+    });
+  </script>
+</body>
+</html>
