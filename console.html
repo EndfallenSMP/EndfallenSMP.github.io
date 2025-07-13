@@ -242,33 +242,26 @@
           'Checking memory integrity...',
           '100% OK',
           'Scanning core modules...',
-          '[ MODULE ] AI: READY [ OFFLINE ]',
-          '[ MODULE ] Pathogen Control: DISABLED',
+          '[ MODULE ] AI: Online',
+          '[ MODULE ] Pathogen Control: Enabled',
           '[ MODULE ] Security Layer: ERROR 0x1DEL',
-          '[ MODULE ] Facility Control: Disabled',
+          '[ MODULE ] Facility Control: Enabled',
           'Running threat analysis...',
-          'THREAT LEVEL: null'
+          'THREAT LEVEL: no.'
         ];
         log.forEach(printToOutput);
         return '';
       },
       '/s ai': () => (
-        `[  AI SYSTEM STATUS  ]\n` +
-        `→ S.C.H.I.S.M. AI last log:\n\n` +
-        `[2037-03-16 20:39:12] ALERT: POSSIBLE MALWARE INJECTION ATTEMPT IDENTIFIED.\n` +
-        `[2037-03-16 20:39:16] SYSTEM MESSAGE: Backup protocols offline.\n` +
-        `[2037-03-16 20:39:20] SYSTEM STATUS: Critical failure. Core systems unresponsive.\n` +
-        `[2037-03-16 20:39:24] SYSTEM MESSAGE: Shutdown complete. All operations halted.\n\n` +
-        `→ S.C.H.I.S.M. Subsystems:\n> ai:main → Offline\n> ai:control → Offline\n> ai:memory → Offline\n` +
-        `> ai:admin-stat → Offline\n> ai:emergency → Online`
-      ),
+        `Access Denied.`
+    ),
       '/s facility': () => `[ FACILITY STATUS ]\nERROR 404: Facility unreachable.`,
       '/s status': () => (
         `[ SYSTEM STATUS CHECK FAILED ]\n\nUnable to retrieve system status.\n` +
         `Reason: Core routing node timeout (ERR: 0x01-RT).\nPlease try again later.`
       ),
       '/s main': () => (
-        `[  MAIN SYSTEM STATUS  ]\nS.C.H.I.S.M. is disabled. Please type /enable to enable the program.`
+        `[  MAIN SYSTEM STATUS  ]\nS.C.H.I.S.M. is Enabled.`
       ),
       '/latest': () => (
         `Private Testing: v0.0.101\n\n`,
