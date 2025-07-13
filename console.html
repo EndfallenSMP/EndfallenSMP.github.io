@@ -28,6 +28,23 @@
       vertical-align: bottom;
       margin-left: 2px;
     }
+.glitch-red {
+  color: red;
+  font-family: monospace;
+  display: block;
+  animation: glitch-shake 0.3s infinite;
+}
+
+@keyframes glitch-shake {
+  0% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(-1px, -1px); }
+  60% { transform: translate(1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+  100% { transform: translate(0); }
+}
+
+
     @keyframes blink {
       0%, 50% { background-color: #ff0000; }
       50.01%, 100% { background-color: transparent; }
@@ -65,11 +82,13 @@
   <div class="log-container">
     <div id="terminal-output">
       <div class="section-divider">======================= S.C.H.I.S.M. SYSTEM LOG =======================</div>
-      VER: v2.03.1002<br>
-      BUILD: 17a-3487<br><br>
+      VER: v2.03.XXXX<br>
+      BUILD: 17a-XXXX<br><br>
       DESCRIPTION:<br>
-      System for Centralized Harmonization and Infection Scheduling of Mutagenics (S.C.H.I.S.M.)<br>
-      Private Facility Control System.<br>
+      <span class="glitch-red">
+      S̶y̴s̵̀t͏̶̕e̵͏̢m͟͠ ̷f͘͠o̸͡r̷ ̕͡C̷͘͝e͟n̶͜t̢r̸a̸̢l͘͜i̕z̶e̷d̶ ̢H͞a̵͘r̸͏m͠ơ͡n̵i͢z͟͠a͟͞t͢i̶̛o̕n̡ ̛ą̡n̴͟d̕͟ ̕͝I̸̢n͝f̨̢e̶͏c̨̛t͏̷i̴̵ó̴n̸ ̛͞S̢̕ç͜h̛e͞͏d̛ú̶l̷̢i̷͟n̸g̴̨ ̛͞o͟͏f̢͜ ̷M̛͢ú̴t̸a͏g̷e̕n͏͞i͘͟c̷̡s̸̡ ̨(̶͡S̵͞.̷C̛̕.̡͜H̷͏.̡͢I̸͞.̢͞S̷͝.͞M̛͞.)<br>
+      P̛ŕ̷i̢͘v̨a̢̛t̸e̛ ̴͟F̷a͘c̴̛i̴l̴i͟t̛̕y̵͟ ̨͞C̸͟o̶͏ń͢t̛r̢͘o̡l̨͞ ͜Ś͏y̴̨s̸t͜e͝m̸͟.
+      </span>
       Reprogramming for personal use permitted.<br>
 
       <div class="section-divider">=======================================================================</div>  
