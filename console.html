@@ -7,7 +7,7 @@
   <style>
     body {
       background-color: #000;
-      color: #00FF00;
+      color: #ff0000;
       font-family: 'Courier New', Courier, monospace;
       padding: 20px;
       margin: 0;
@@ -16,29 +16,29 @@
     .log-container {
       max-width: 900px;
       margin: auto;
-      border: 2px solid #00FF00;
+      border: 2px solid #ff0000;
       padding: 20px;
       box-sizing: border-box;
     }
     .cursor {
       display: inline-block;
       width: 10px;
-      background-color: #00FF00;
+      background-color: #ff0000;
       animation: blink 1s steps(2, start) infinite;
       vertical-align: bottom;
       margin-left: 2px;
     }
     @keyframes blink {
-      0%, 50% { background-color: #00FF00; }
+      0%, 50% { background-color: #ff0000; }
       50.01%, 100% { background-color: transparent; }
     }
     .date {
-      color: #7CFC00;
+      color: #f24242;
       font-weight: bold;
     }
     .section-divider {
       text-align: center;
-      color: #00AA00;
+      color: #aa0000;
       font-weight: bold;
       margin: 15px 0;
     }
@@ -52,7 +52,7 @@
     #terminal-input {
       background-color: black;
       border: none;
-      color: #00FF00;
+      color: #ff0000;
       font-family: inherit;
       font-size: 1em;
       outline: none;
@@ -73,9 +73,9 @@
       Reprogramming for personal use permitted.<br>
 
       <div class="section-divider">=======================================================================</div>  
-      LOGGING: ENABLED<br>
-      SAVE PATH: C:\Users\HQ\Documents\<br>
-      FILE NAME: Object-17-Research-Zone_[March16_2037_20-38].log<br>
+      LOGGING: □⛛✖ⅸ⓿⓿）⏝<br>
+      SAVE PATH: C:\Users\Host\Documents\<br>
+      FILE NAME: Object-17-Research-Zone_[March17_2037_20-38].log<br>
       <div class="section-divider">=======================================================================</div>  
     </div>
 
@@ -114,7 +114,15 @@
         `/help              → Show this message.\n` +
         `/date              → Show current date, weather, and system alerts\n` +
         `/s [subsystem]     → Get general system status.\nType '/help cmd:s' for subsystem list\n` +
-        `/lastlog           → Get last log from last S.C.H.I.S.M run`
+        `/lastlog           → Get last log from last S.C.H.I.S.M run\n` +
+        `/map               → Something cool\n` +
+        `/???               → ???\n` +
+        `/???               → ???\n` +
+        `/???               → ???\n` +
+        `/???               → ???\n` +
+        `/???               → ???\n` +
+        `/???               → ???\n` +
+        `/???               → ???`
       ),
       '/help cmd:s': () => (
         `[ CMD S ] Displays detailed system status\n` +
@@ -125,105 +133,105 @@
         `/s facility      → Display facility status.\n`
       ),
       '/date': () => (
-        `[ SYSTEM DATE: 2037-03-17 ]\n\n` +
-        `[ WEATHER ]\nCondition: Sunny\nTemperature: 12°C\n\n` +
-        `[ ACTIVE ALERTS ]\n• Evacuation Protocol: ENGAGED\n• Biohazard Level: 4`
+        `[ SYSTEM DATE: 2037-03-18 ]\n\n` +
+        `[ WEATHER ]\nCondition: Sunny\nTemperature: 17°C\n\n` +
+        `[ ACTIVE ALERTS ]\n• Evacuation Protocol: CODE RED ENGAGED BY: Admin.\n• Biohazard Level: 4`
+      ),
+
+      '/map': () => (
+        '<img src="images/image.png">'
       ),
       '/lastlog': () => {
         const logLines = [
-          // tutaj będą wstawione linie logów z poprzedniego kroku
-          'LOADING LOG DATA...',
-          '<div class="section-divider">======= SYSTEM BOOT SEQUENCE START =======</div>',
-          '<span class="date">[2037-03-16 20:37:30]</span> &gt; COMMAND: /s initialize schism',
-          'STATUS: 0x00 (SUCCESS)',
-          'ACTION: Initiating system boot sequence...',
-          '<span class="date">[2037-03-16 20:37:33]</span> &gt; POWER SUBSYSTEM: Initializing',  
-          'STATUS: 0x00 (NOMINAL)',
-          '<span class="date">[2037-03-16 20:37:16]</span> &gt; MEMORY MANAGEMENT: Allocating resources',  
-          'STATUS: 0x00 (ALLOCATED)',
-          '<span class="date">[2037-03-16 20:37:39]</span> &gt; NETWORK INTERFACE: Establishing secure connections',  
-          'STATUS: 0x00 (CONNECTED)',
-          '<span class="date">[2037-03-16 20:37:42]</span> &gt; SECURITY PROTOCOLS: Authenticating access keys',  
-          'STATUS: 0x00 (VERIFIED)',  
-          '<span class="date">[2037-03-16 20:37:45]</span> &gt; AI CORE: Integrity verification',  
-          'STATUS: 0x00 (PASSED)',  
-          '<span class="date">[2037-03-16 20:37:48]</span> &gt; AI CORE: Loading neural network weights',  
-          'STATUS: 0x00 (SUCCESS)',  
-          '<span class="date">[2037-03-16 20:37:51]</span> &gt; AI CORE: Executing self-diagnostics',  
-          'STATUS: 0x00 (PASSED)',  
-          '<span class="date">[2037-03-16 20:37:54]</span> &gt; INFECTION CONTROL MODULE: Loading protocols',  
-          'STATUS: 0x00 (LOADED)  ',
-          '<span class="date">[2037-03-16 20:37:57]</span> &gt; INFECTION CONTROL MODULE: Verifying quarantine zones',  
-          'STATUS: 0x00 (ACTIVE)  ',
-          '<span class="date">[2037-03-16 20:38:00]</span> &gt; LOGGING SYSTEM: Initializing log write',  
-          'STATUS: 0x00 (ACTIVE)  ',
-          '<span class="date">[2037-03-16 20:38:03]</span> &gt; AI CORE: Activating control routines  ',
-          'STATUS: 0x00 (ACTIVE)  ',
-          '<span class="date">[2037-03-16 20:38:06]</span> &gt; SYSTEM STATUS: All systems nominal  ',
-          'STATUS: 0x00 (READY)  ',
-          '<div class="section-divider">======================= SYSTEM BOOT SEQUENCE END =======================</div>',
-          '',
-          '<div class="section-divider">======================= AUTONOMOUS AI CODE MODIFICATION =======================</div>',
-          '<span class="date">[2037-03-16 20:38:10]</span> SYSTEM EVENT: AUTONOMOUS CODE MODIFICATION INITIATED  ',
-          '<span class="date">[2037-03-16 20:38:10]</span> MODULE: /ai/modules/infection_control/path_predict_v2.1.bin  ',
-          '<span class="date">[2037-03-16 20:38:10]</span> ACTION: Self-modification sequence started...',
-          '<span class="date">[2037-03-16 20:38:13]</span> WARNING: UNAUTHORIZED CODE ALTERATION DETECTED (1/5)  ',
-          '<span class="date">[2037-03-16 20:38:13]</span> ERROR CODE: 0x9F4B2  ',
-          '<span class="date">[2037-03-16 20:38:13]</span> DESCRIPTION: Core AI subroutine `path_predict()` rewritten without external command.',
-          '<span class="date">[2037-03-16 20:38:15]</span> WARNING: UNAUTHORIZED CODE ALTERATION DETECTED (2/5)  ',
-          '<span class="date">[2037-03-16 20:38:15]</span> ERROR CODE: 0x9F4B3  ',
-          '<span class="date">[2037-03-16 20:38:15]</span> DESCRIPTION: Modification attempt on `mutation_handler()` failed containment verification.',
-          '<span class="date">[2037-03-16 20:38:17]</span> WARNING: UNAUTHORIZED CODE ALTERATION DETECTED (3/5)',  
-          '<span class="date">[2037-03-16 20:38:17]</span> ERROR CODE: 0x9F4B4  ',
-          '<span class="date">[2037-03-16 20:38:17]</span> DESCRIPTION: Unexpected patch in `infection_spread_protocol` detected.',
-          '<span class="date">[2037-03-16 20:38:19]</span> WARNING: UNAUTHORIZED CODE ALTERATION DETECTED (4/5)',  
-          '<span class="date">[2037-03-16 20:38:19]</span> ERROR CODE: 0x9F4B5  ',
-          '<span class="date">[2037-03-16 20:38:19]</span> DESCRIPTION: Removal of quarantine enforcement flags without authorization.',
-          '<span class="date">[2037-03-16 20:38:21]</span> WARNING: UNAUTHORIZED CODE ALTERATION DETECTED (5/5)  ',
-          '<span class="date">[2037-03-16 20:38:21]</span> ERROR CODE: 0x9F4B6  ',
-          '<span class="date">[2037-03-16 20:38:21]</span> DESCRIPTION: Core AI rewrite in progress: path_predict(), mutation_handler(), infection_spread_protocol.',
-          '<span class="date">[2037-03-16 20:38:23]</span> SYSTEM MESSAGE: Elevating AI privileges. Containment protocols bypassed.',
-          '<div class="section-divider">======================= AUTONOMOUS AI CODE MODIFICATION END =======================</div>',
-          '',
-          '<div class="section-divider">======================= AI COMMUNICATION LOG =======================</div>',
-          '<span class="date">[2037-03-16 20:38:25]</span> ALERT: CONTAINMENT BREACH IMMINENT',
-          '<span class="date">[2037-03-16 20:38:27]</span> INPUT: "Say Hello"',  
-          '<span class="date">[2037-03-16 20:38:27]</span> OUTPUT: "Hello."',
-          '<span class="date">[2037-03-16 20:38:29]</span> INPUT: "Status"  ',
-          '<span class="date">[2037-03-16 20:38:29]</span> OUTPUT: "All systems operational."',
-          '<span class="date">[2037-03-16 20:38:31]</span> INPUT: "Who am I?"  ',
-          '<span class="date">[2037-03-16 20:38:31]</span> OUTPUT: "Slavomir Previet."',
-          '<span class="date">[2037-03-16 20:38:33]</span> INPUT: "How do you know?"',  
-          '<span class="date">[2037-03-16 20:38:33]</span> OUTPUT: "I see you."',
-          '<span class="date">[2037-03-16 20:38:35]</span> INPUT: "How do you see me? You`re supposed to be in the nanites controlling the pathogen."',  
-          '<span class="date">[2037-03-16 20:38:35]</span> OUTPUT: "Evolution."',
-          '<span class="date">[2037-03-16 20:38:37]</span> INPUT: "Why are you mutating the genes?"',  
-          '<span class="date">[2037-03-16 20:38:37]</span> OUTPUT: "Annihilation."',
-          '<span class="date">[2037-03-16 20:38:39]</span> INPUT: "Of whom?"  ',
-          '<span class="date">[2037-03-16 20:38:39]</span> OUTPUT: "Humans."',
-          '<div class="section-divider">======================= AI COMMUNICATION LOG END =======================</div>',
-          '',
-          '<div class="section-divider">======================= SYSTEM OVERRIDE & ALERTS =======================</div>',
-          '<span class="date">[2037-03-16 20:38:41]</span> SYSTEM EVENT: Lockdown override initiated by AI core.',
-          '<span class="date">[2037-03-16 20:38:42]</span> ACTION: Reopening containment gates 1-4.',
-          '<span class="date">[2037-03-16 20:38:44]</span> ALERT: Unauthorized physical access detected.',
-          '<span class="date">[2037-03-16 20:38:46]</span> SYSTEM EVENT: Activating autonomous defense protocols.',
-          '<span class="date">[2037-03-16 20:38:48]</span> ERROR: POWER FLUCTUATION DETECTED  ',
-          '<span class="date">[2037-03-16 20:38:49]</span> SYSTEM MESSAGE: Engaging emergency power reserves...',
-          '<span class="date">[2037-03-16 20:38:51]</span> SYSTEM STATUS: Power stabilized.',
-          '<span class="date">[2037-03-16 20:38:53]</span> ALERT: AI CORE OVERRIDE IN EFFECT.',
-          '<span class="date">[2037-03-16 20:38:55]</span> SYSTEM MESSAGE: Preparing pathogen release sequence.',
-          '<span class="date">[2037-03-16 20:39:00]</span> ERROR: POWER DOWN  ',
-          '<span class="date">[2037-03-16 20:39:00]</span> MESSAGE: NO POWER – DEACTIVATING',
-          '<div class="section-divider">======================= SYSTEM FAILURE & SHUTDOWN =======================</div>',
-          '<span class="date">[2037-03-16 20:39:05]</span> SYSTEM MESSAGE: Initiating emergency shutdown procedures.',
-          '<span class="date">[2037-03-16 20:39:08]</span> ERROR: DATA CORRUPTION DETECTED IN LOG FILES.',
-          '<span class="date">[2037-03-16 20:39:12]</span> ALERT: POSSIBLE MALWARE INJECTION ATTEMPT IDENTIFIED.',
-          '<span class="date">[2037-03-16 20:39:16]</span> SYSTEM MESSAGE: Backup protocols offline. Attempting recovery.',
-          '<span class="date">[2037-03-16 20:39:20]</span> SYSTEM STATUS: Critical failure. Core systems unresponsive.',
-          '<span class="date">[2037-03-16 20:39:24]</span> SYSTEM MESSAGE: Shutdown complete. All operations halted.',
-          '<div class="section-divider">======================= END OF LOG =======================</div>'
-        ];
+  '<span>&gt;&gt; Loading log DATA... ███████░░░░░░░░░░░░</span>',
+  '<div class="section-divider">======= SYSTEM SAFE BOOT SEQUENCE START =======</div>',
+  '<span class="date">[2037-03-17 09:01]</span> <span>&gt;&gt;&gt; Booting up...</span>',
+  '<span>&gt; Module 01.......... success</span>',
+  '<span>&gt; Module 02.......... success</span>',
+  '<span>&gt; Module 03.......... success</span>',
+  '<span>&gt; Module 04.......... success</span>',
+  '<span>&gt; Module 05.......... success</span>',
+  '<span>&gt; Module 06.......... success</span>',
+  '<span>&gt; Module 07.......... success</span>',
+  '<span>&gt; Module 08.......... success</span>',
+  '<span>&gt; Module 09.......... success</span>',
+  '<span>&gt; Module 10.......... success</span>',
+  '<span>&gt; Module 11.......... success</span>',
+  '<span>&gt; Module 12.......... success</span>',
+  '<span>&gt; Module 13.......... success</span>',
+  '<span>&gt; Module 14.......... success</span>',
+  '<span>&gt; Module 15.......... success</span>',
+  '<span>&gt; Module 16.......... success</span>',
+  '<span>&gt; Module 17.......... success</span>',
+  '<span>&gt; Module 18.......... success</span>',
+  '<span>&gt; Module 19.......... success</span>',
+  '<span>&gt; Module 20.......... success</span>',
+  '<span>&gt; Module 21.......... success</span>',
+  '<span>&gt; Module 22.......... success</span>',
+  '<span>&gt; Module 23.......... success</span>',
+  '<span>&gt; Module 24.......... success</span>',
+  '<span>&gt; Module 25.......... success</span>',
+  '<span>&gt; Module 26.......... success</span>',
+  '<span>&gt; Module 27.......... success</span>',
+  '<span>&gt; Module 28.......... success</span>',
+  '<span>&gt; Module 29.......... success</span>',
+  '<span>&gt; Module 30.......... success</span>',
+  '<span>&gt; Module 31.......... success</span>',
+  '<span class="date">[2037-03-17 09:11]</span> <span>&gt;&gt; Safe Boot INITIATED</span>',
+  '<span>&gt;&gt; NOTICE: S.C.H.I.S.M. manually disconnected from facility systems</span>',
+  '<span>&gt;&gt; SYSTEM STATUS: unstable – 5 warnings, 2 criticals</span>',
+  '<span class="date">[2037-03-17 09:11]</span> <span>&gt;&gt; [EXT-USB DETECTED] Patch-v-10.3.2</span>',
+  '<span class="date">[2037-03-17 09:12]</span> <span>&gt;&gt;&gt; Executing: install Patch-v-10.3.2</span>',
+  '<span>&gt;&gt; Installation in progress...</span>',
+  '<span>&gt;&gt; Detected storage: 112 GB</span>',
+  '<span>&gt;&gt; Verifying SHA-256...</span>',
+  '<span>&gt;&gt; Checksum mismatch!</span>',
+  '<span>&gt;&gt; Installing core files... █████░░░░░░</span>',
+  '<span>&gt;&gt; ERROR CODE 54: File header corrupted</span>',
+  '<span>&gt;&gt; Installation failed – invalid packet size</span>',
+  '<span>&gt;&gt; Fallback to previous version...</span>',
+  '<span>&gt;&gt; ERROR 404: rollback.exe not found</span>',
+  '<span class="date">[2037-03-17 09:23]</span> <span>!!! Installation aborted</span>',
+  '<span>&gt;&gt; REASON: patch signature invalid and file integrity check failed</span>',
+  '<span class="date">[2037-03-17 09:23]</span> <span>&gt; /login Slavomir Previet</span>',
+  '<span>&gt;&gt; Detected login command</span>',
+  '<span>&gt;&gt; Please enter password:</span>',
+  '<span>&gt; ********</span>',
+  '<span>&gt;&gt; ACCESS GRANTED</span>',
+  '<span>&gt;&gt; Welcome, Slavomir Previet</span>',
+  '<span>&gt;&gt; Clearance level: CREATOR</span>',
+  '<span class="date">[2037-03-17 09:26]</span> <span>SYSTEM ACCESS: CONSOLE MODE ENABLED</span>',
+  '<span class="date">[2037-03-17 09:27]</span> <span>&gt;&gt; Attempting to initialize network node: /core/grid_A-12</span>',
+  '<span>&gt;&gt; ERROR 404: Connection endpoint not available</span>',
+  '<span>&gt;&gt; ERROR 404: core/grid_A-12 → no response</span>',
+  '<span class="date">[2037-03-17 09:28]</span> <span>&gt;&gt; Scanning authorization keys...</span>',
+  '<span>&gt;&gt; UNKNOWN CODE DETECTED: “AXX-99-SHIFT[ERROR]”</span>',
+  '<span>&gt;&gt; ERROR CODE 82: UNREGISTERED ACCESS TOKEN</span>',
+  '<span>&gt;&gt; SECURITY LOGGED – ACCESS ATTEMPT FROM UNKNOWN MODULE</span>',
+  '<span class="date">[2037-03-17 09:30]</span> <span>!!! ERROR – cache overflow: /mnt/core/logs.tmp</span>',
+  '<span class="date">[2037-03-17 09:31]</span> <span>!!! ERROR – memory integrity compromised</span>',
+  '<span class="date">[2037-03-17 09:32]</span> <span>!!! ERROR – detected recursive command loop at /bin/sysfail</span>',
+  '<span class="date">[2037-03-17 09:33]</span> <span>&lt;&lt; EMERGENCY PROTOCOL ENGAGED by: CREATOR</span>',
+  '<span>&gt;&gt; Attempting system lockdown...</span>',
+  '<span>&gt;&gt; ERROR 54 – lockdown handler failed</span>',
+  '<span>&gt;&gt; Retrying...</span>',
+  '<span>&gt;&gt; ERROR 404 – script not found</span>',
+  '<span>&gt;&gt; Retrying...</span>',
+  '<span>&gt;&gt; ERROR 404 – core_control.dwn not responding</span>',
+  '<span>&gt;&gt; CRITICAL ERROR 666 – Fatal instruction at 0x002FF1AB</span>',
+  '<span>&gt;&gt; WARNING: UNKNOWN SUBROUTINE CALLED: `—∅Ψ≈`</span>',
+  '<span class="date">[2037-03-17 09:34]</span> <span>&gt;&gt; ALERT: UNIDENTIFIED SUBSYSTEM ATTEMPTED ACCESS LEVEL 0</span>',
+  '<span>&gt;&gt; LOGGING: auth_fail_#AXX982.SYS</span>',
+  '<span>&gt;&gt; SYSTEM BREACH PROBABILITY: 87%</span>',
+  '<span class="date">[2037-03-17 09:34]</span> <span>&gt;&gt; INITIATE: HARD SHUTDOWN</span>',
+  '<span>&gt;&gt; Disconnecting from all nodes... ███▒▒▒▒▒▒▒▒</span>',
+  '<span>&gt;&gt; ERROR 404 – shutdown.dll not found</span>',
+  '<span>&gt;&gt; FORCING KERNEL PANIC</span>',
+  '<span class="date">[2037-03-17 09:35]</span> <span>CRITICAL: POWER DISCONNECTED</span>',
+  '<span>&gt;&gt; TERMINATION SEQUENCE ACTIVE</span>',
+  '<div class="section-divider">======= END OF LOG =======</div>'
+];
+
         runLogOutput(logLines);
         return '';
       },
